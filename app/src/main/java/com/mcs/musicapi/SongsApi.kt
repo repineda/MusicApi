@@ -7,14 +7,14 @@ import retrofit2.http.GET
 
 //https://itunes.apple.com/search?term=rock&amp;amp;media=music&amp;amp;entity=song&amp;amp;limit=50
 interface SongsApi {
-    @GET("search?term=rock&amp;amp;media=music&amp;amp;entity=song&amp;amp;limit=50")
-    fun getRock(): Call<List<SongItem>>
+    @GET("search?term=rock&amp;amp;media=music&amp;amp;entity=song&amp;amp;limit=20")
+    fun getRock(): Call<SongResponse>
 
-    @GET("search?term=classick&amp;amp;media=music&amp;amp;entity=song&amp;amp;limit=50")
-    fun getClassic(): Call<List<SongItem>>
+    @GET("search?term=classick&amp;amp;media=music&amp;amp;entity=song&amp;amp;limit=20")
+    fun getClassic(): Call<SongResponse>
 
-    @GET("search?term=pop&amp;amp;media=music&amp;amp;entity=song&amp;amp;limit=50")
-    fun getPop(): Call<List<SongItem>>
+    @GET("search?term=pop&amp;amp;media=music&amp;amp;entity=song&amp;amp;limit=20")
+    fun getPop(): Call<SongResponse>
 
     companion object {
         fun initRetroFit(): SongsApi{

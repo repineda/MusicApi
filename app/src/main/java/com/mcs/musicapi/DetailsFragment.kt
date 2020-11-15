@@ -10,6 +10,13 @@ import androidx.fragment.app.Fragment
 import com.squareup.picasso.Picasso
 
 class DetailFragment: Fragment(){
+
+    interface RefreshListener{
+        fun refreshCalled()
+    }
+
+    var  myListener : RefreshListener? = null
+
     companion object{
         fun newInstance(songItem: SongItem): DetailFragment{
             return DetailFragment().also{
@@ -32,7 +39,7 @@ class DetailFragment: Fragment(){
             view.findViewById<TextView>(R.id.tv_artist_name).text = it.artistName
             view.findViewById<TextView>(R.id.tv_collection_name).text = it.collectionName
             view.findViewById<TextView>(R.id.tv_price).text = it.trackPrice.toString()
-            view.findViewById<ImageView>(R.id.iv_item_song_art).showPoster(it.artworkUrl60)
+            view.findViewById<ImageView>(R.id.iv_song_art).showPoster(it.artworkUrl60)
         }
         return view
     }
